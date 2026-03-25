@@ -13,19 +13,20 @@ The training code is located at `main.py`, and the slightly modified original An
 
 Requirements:
   - Python 3.10+
-  - CUDA Version: 12 (if CUDA is not available, comment out Nvidia-related packages before installing `requirements.txt` to train on CPU)
+  - CUDA Version: 12 (optional, for GPU training)
+  - Install [uv](https://docs.astral.sh/uv/getting-started/installation/)
   - Install C compiler on your system `sudo apt install build-essential`
   - Install [swig](https://en.wikipedia.org/wiki/SWIG#:~:text=The%20Simplified%20Wrapper%20and%20Interface,%2C%20OCaml%2C%20Octave%2C%20Scilab%20and) `sudo apt-get install swig`
-  - Install requirements `pip install -r requirements.txt`
+  - Install dependencies: `uv sync`
 
 # Train
 
-To train a new model, run: `python3.10 main.py`.
+To train a new model, run: `uv run main.py`.
 Check Andrej Karpathy's [Blog](https://karpathy.github.io/2016/05/31/rl/) for more details of the training, algorithm, etc.
 
 # Play
 
-To play, run: `python3.10 play.py --model_path=best_reward_model.pth --device="cuda:0"`
+To play, run: `uv run play.py --model_path=best_reward_model.pth --device="cuda:0"`
 
 # Model Learning Curve
 
