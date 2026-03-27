@@ -52,7 +52,7 @@ def parse_args():
     ap = argparse.ArgumentParser('Evaluate Parser')
     ap.add_argument('--model_path', type=str, default='best_reward_model.pth',
                     help="Path to the model .pth file")
-    ap.add_argument('--device', type=str, default='cuda:0',
+    ap.add_argument('--device', type=str, default='cpu', # 'cuda:0',
                     help="Device to use")
     args = ap.parse_args()
     return args
